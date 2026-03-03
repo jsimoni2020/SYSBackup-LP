@@ -1,0 +1,11 @@
+services:
+  sysbackup:
+    build: .
+    container_name: sysbackup-lp
+    ports:
+      - "51501:51501"
+    volumes:
+      - /Users/justin.simoni/Downloads:/source:ro
+      - /Volumes/2TB WorkDrive/Backup:/dest
+      - ./logs:/app/logs
+    restart: unless-stopped
